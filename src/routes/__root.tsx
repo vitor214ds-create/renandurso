@@ -11,6 +11,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { Toaster } from "@/components/ui/sonner";
+import { CONTACT } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +82,56 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "author", content: "Renan Durso Advocacia" },
+      { property: "og:site_name", content: "Renan Durso — Direito da Saúde" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Attorney",
+          name: "Renan Durso Advocacia — Direito da Saúde",
+          description:
+            "Advocacia especializada em Direito da Saúde e Direito Médico: home care, medicamentos de alto custo, cirurgias negadas, tratamentos oncológicos e liminares.",
+          areaServed: "BR",
+          telephone: "+5511943433532",
+          email: CONTACT.email,
+          priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Av. Pres. Juscelino Kubitschek, 1327, 4º andar, Conjunto 41",
+            addressLocality: "São Paulo",
+            addressRegion: "SP",
+            postalCode: "04543-011",
+            addressCountry: "BR",
+          },
+          knowsAbout: [
+            "Direito da Saúde",
+            "Direito Médico",
+            "Planos de saúde",
+            "Home care",
+            "Medicamentos de alto custo",
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +159,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Header />
+      <main>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <Footer />
+      <FloatingWhatsApp />
+      <Toaster />
     </QueryClientProvider>
   );
 }
