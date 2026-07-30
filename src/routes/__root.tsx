@@ -88,6 +88,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "index, follow" },
+      { title: "Lovable App" },
+      { property: "og:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "description", content: "Saúde Jurídica Clara offers specialized legal services for health-related issues, ensuring access to treatments and rights." },
+      { property: "og:description", content: "Saúde Jurídica Clara offers specialized legal services for health-related issues, ensuring access to treatments and rights." },
+      { name: "twitter:description", content: "Saúde Jurídica Clara offers specialized legal services for health-related issues, ensuring access to treatments and rights." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/035a956e-55c7-4d2b-a99e-2aa8e45f353f/id-preview-367403d5--ff43ac2b-76a0-4e34-833a-724650c60bf6.lovable.app-1785441054821.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/035a956e-55c7-4d2b-a99e-2aa8e45f353f/id-preview-367403d5--ff43ac2b-76a0-4e34-833a-724650c60bf6.lovable.app-1785441054821.png" },
     ],
     links: [
       {
