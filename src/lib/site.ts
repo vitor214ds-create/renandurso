@@ -3,8 +3,8 @@ export const CONTACT = {
   lawyer: "Renan Durso",
   phone: "(11) 94343-3532",
   phoneHref: "tel:+5511943433532",
-  whatsapp: "(18) 99127-5357",
-  whatsappNumber: "5518991275357",
+  whatsapp: "(11) 94343-3532",
+  whatsappNumber: "5511943433532",
   email: "renandurso@aasp.org.br",
   address: {
     street: "Av. Pres. Juscelino Kubitschek, nº 1327",
